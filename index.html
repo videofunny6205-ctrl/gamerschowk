@@ -1,4 +1,4 @@
-   setTimeout(() => {
+
                 if(game === "BGMI") {
                     playerData.innerHTML = `1. <b>Pro_Viper86</b> (Tier: Ace, Role: ${role}) <br> 2. <b>DesiKing_YT</b> (Tier: Crown, Role: ${role})`;
                 } else if(game === "FreeFire") {
@@ -13,10 +13,4 @@
             event.preventDefault();
             const successBox = document.getElementById('regSuccessBox');
             successBox.style.display = "block";
-            document.getElementById('regForm').reset();
-            successBox.scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
-</body>
-</html>
-         
+            document.getElementById('regForm').reset()
