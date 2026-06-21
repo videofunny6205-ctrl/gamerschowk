@@ -1,9 +1,9 @@
-html>
+<!DOCTYPE html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GamerChowk Study - 12th Board Exam 2026</title>
+    <title>GamerChowk - Watch & Earn</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -14,211 +14,117 @@ html>
         }
 
         body {
-            background-color: #0d0f12;
+            background-color: #080a10;
             color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
         }
 
-        .container {
-            background: #161a22;
-            border: 2px solid #00cbc6;
+        .main-box {
+            background: #121622;
+            border: 2px solid #ffaa00;
             border-radius: 15px;
-            box-shadow: 0 0 25px rgba(0, 203, 198, 0.1);
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.2);
             width: 100%;
-            max-width: 480px;
-            padding: 25px;
-        }
-
-        .header {
+            max-width: 460px;
+            padding: 20px;
             text-align: center;
-            margin-bottom: 20px;
         }
 
-        .header h1 {
-            font-size: 26px;
-            color: #00cbc6;
+        h1 {
+            color: #ffaa00;
+            font-size: 24px;
             text-transform: uppercase;
+            margin-bottom: 5px;
             letter-spacing: 1px;
         }
 
-        .header p {
-            font-size: 13px;
-            color: #a0aec0;
-        }
-
-        .notice-board {
-            background: rgba(0, 203, 198, 0.05);
-            border: 1px solid rgba(0, 203, 198, 0.2);
+        .balance-card {
+            background: rgba(255, 170, 0, 0.1);
+            border: 1px solid #ffaa00;
             padding: 10px;
             border-radius: 8px;
-            font-size: 12px;
-            color: #cbd5e0;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            font-size: 15px;
-            color: #ff2a74;
-            margin-bottom: 10px;
-            font-weight: 600;
-            border-left: 3px solid #ff2a74;
-            padding-left: 8px;
-        }
-
-        .material-list {
-            margin-bottom: 25px;
-        }
-
-        .material-card {
-            background: #1a202c;
-            border: 1px solid #2d3748;
-            padding: 15px;
-            margin-bottom: 12px;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
+            display: inline-flex;
+            align-items: center;
             gap: 8px;
-        }
-
-        .material-card h4 {
-            font-size: 14px;
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .card-meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 11px;
-            color: #a0aec0;
-        }
-
-        .badge-free {
-            background: #2f855a;
-            color: #fff;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-
-        .badge-premium {
-            background: #9b2c2c;
-            color: #fff;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: bold;
-        }
-
-        .download-btn {
-            background: #00cbc6;
-            color: #0d0f12;
-            text-align: center;
-            padding: 8px;
-            border-radius: 6px;
-            font-size: 13px;
             font-weight: 700;
-            text-decoration: none;
-            cursor: pointer;
-            transition: 0.3s;
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #ffaa00;
         }
 
-        .download-btn:hover {
-            background: #00a39f;
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #2d3748;
+            margin-bottom: 15px;
         }
 
-        .modal-overlay {
-            display: none;
-            position: fixed;
+        .video-container iframe {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(5px);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            padding: 20px;
         }
 
-        .lock-box {
-            background: #161a22;
-            border: 2px solid #ff2a74;
-            border-radius: 15px;
-            box-shadow: 0 0 30px rgba(255, 42, 116, 0.3);
+        .btn-zone {
+            margin-top: 15px;
+        }
+
+        .action-btn {
+            background: #ffaa00;
+            color: #080a10;
+            border: none;
             width: 100%;
-            max-width: 410px;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 20px;
-            color: #a0aec0;
-            cursor: pointer;
-        }
-
-        .payment-box {
-            background: rgba(255, 42, 116, 0.08);
-            border: 1px dashed #ff2a74;
-            border-radius: 10px;
             padding: 12px;
-            margin: 12px 0;
-        }
-
-        .phonepe-btn {
-            background: #fff;
-            color: #5f259f;
-            font-weight: 700;
-            padding: 8px;
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            text-decoration: none;
             font-size: 15px;
-            margin-bottom: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        }
-
-        .phonepe-btn img {
-            height: 20px;
-        }
-
-        .qr-container {
-            background: #fff;
-            padding: 8px;
+            font-weight: 700;
             border-radius: 8px;
-            width: 160px;
-            height: 160px;
-            margin: 5px auto 10px auto;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
         }
 
-        .qr-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+        .action-btn:disabled {
+            background: #2d3748;
+            color: #718096;
+            cursor: not-allowed;
+        }
+
+        .timer-text {
+            font-size: 14px;
+            color: #a0aec0;
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        /* Redeem Form Styles */
+        .redeem-box {
+            display: none;
+            background: #1a202c;
+            border: 1px solid #4ade80;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .redeem-box h3 {
+            color: #4ade80;
+            font-size: 16px;
+            margin-bottom: 10px;
+            text-align: center;
         }
 
         .input-group {
-            text-align: left;
             margin-bottom: 12px;
         }
 
@@ -227,157 +133,119 @@ html>
             font-size: 11px;
             color: #a0aec0;
             margin-bottom: 4px;
-            font-weight: 600;
         }
 
         .input-group input {
             width: 100%;
-            background: #0d0f12;
+            background: #080a10;
             border: 1px solid #2d3748;
-            border-radius: 8px;
+            border-radius: 6px;
             padding: 10px;
             color: #fff;
             font-size: 13px;
             outline: none;
         }
 
-        .verify-btn {
-            background: #ff2a74;
-            color: #fff;
+        .submit-redeem {
+            background: #4ade80;
+            color: #080a10;
             border: none;
             width: 100%;
-            padding: 12px;
-            font-size: 14px;
+            padding: 10px;
             font-weight: 700;
-            border-radius: 8px;
+            border-radius: 6px;
             cursor: pointer;
             text-transform: uppercase;
-        }
-
-        .loader-box {
-            display: none;
-            margin: 20px 0;
-        }
-
-        .spinner {
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border-left-color: #00cbc6;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 10px auto;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="header">
-            <h1>📚 STUDY ZONE</h1>
-            <p>12th Board Exam Special</p>
+    <div class="main-box">
+        <h1>📺 WATCH & EARN</h1>
+        <p style="font-size: 12px; color: #a0aec0; margin-bottom: 5px;">Video ko poora dekhein aur Paytm Cash kamayein!</p>
+        
+        <!-- 👉 DIRECT CHANNEL SUBSCRIBE LINK -->
+        <a href="https://youtube.com/@indian3d_869" target="_blank" style="color: #ffaa00; text-decoration: none; font-weight: bold; display: block; margin-bottom: 15px; font-size: 14px;">👉 Click Here to Subscribe @indian3d_869</a>
+
+        <!-- WALLET BALANCE -->
+        <div class="balance-card">
+            💰 Wallet Balance: ₹<span id="balance">0.00</span>
         </div>
 
-        <div class="notice-board">
-            📢 Chote Notes bilkul FREE hain. Badi VVIP Files & 10 Model Papers download karne ke liye ₹20 ka charge lagega.
+        <!-- YOUTUBE VIDEO BOX -->
+        <div class="video-container">
+            <!-- ✅ AAPKI VIDEO ID FIT KAR DI HAI -->
+            <iframe id="ytVideo" src="https://www.youtube.com/embed/qyPdGLTG7ZA?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
-        <!-- FREE MATERIAL SECTION -->
-        <div class="section-title">Free Revision Notes</div>
-        <div class="material-list">
-            <div class="material-card">
-                <h4>📄 Political Science - Chapter 1 & 2 Quick Revision Notes</h4>
-                <div class="card-meta">
-                    <span>Size: 1.2 MB</span>
-                    <span class="badge-free">FREE</span>
-                </div>
-                <a href="#" class="download-btn" onclick="alert('Free PDF file open ho rahi hai!')">⬇️ Download Free PDF</a>
+        <!-- TIMER & TASK BUTTON -->
+        <div class="btn-zone">
+            <button class="action-btn" id="startTaskBtn" onclick="startVideoTask()">▶️ Start Task & Watch Video</button>
+            <div class="timer-text" id="timerZone" style="display: none;">
+                ⏳ Video dekh rahe ho... Kripya <span id="countdown" style="color: #ffaa00;">60</span> seconds tak wait karein!
             </div>
-
-            <div class="material-card">
-                <h4>📄 History - Important Dates & Timeline Sheet</h4>
-                <div class="card-meta">
-                    <span>Size: 850 KB</span>
-                    <span class="badge-free">FREE</span>
-                </div>
-                <a href="#" class="download-btn" onclick="alert('Free PDF file open ho rahi hai!')">⬇️ Download Free PDF</a>
-            </div>
+            <button class="action-btn" id="claimBtn" style="display: none; background: #4ade80;" onclick="claimMoney()">🎁 Claim Rewards (₹5)</button>
         </div>
 
-        <!-- PREMIUM BIG FILES SECTION -->
-        <div class="section-title">🔒 Premium VVIP Files (Locked)</div>
-        <div class="material-list">
-            <div class="material-card">
-                <h4>🔥 Political Science - 10 VVIP Leak Model Papers PDF</h4>
-                <div class="card-meta">
-                    <span>Size: 18.5 MB (Badi File)</span>
-                    <span class="badge-premium">₹20 UNLOCK</span>
+        <!-- REDEEM WALLET BOX -->
+        <div class="redeem-box" id="redeemZone">
+            <h3>💸 Instant Withdrawal Form</h3>
+            <form id="redeemForm">
+                <div class="input-group">
+                    <label>📱 ENTER PAYTM / PHONEPE NUMBER</label>
+                    <input type="text" id="userPhone" placeholder="Enter 10-Digit Mobile Number" pattern="\d{10}" maxlength="10" required>
                 </div>
-                <div class="download-btn" onclick="openLock('https://drive.google.com/file/d/PREMIUM_POLITICAL_LINK')">🔒 Unlock & Download PDF</div>
-            </div>
-
-            <div class="material-card">
-                <h4>🔥 History - Full Course Chapter-wise Premium Notes Master PDF</h4>
-                <div class="card-meta">
-                    <span>Size: 22.1 MB (Badi File)</span>
-                    <span class="badge-premium">₹20 UNLOCK</span>
-                </div>
-                <div class="download-btn" onclick="openLock('https://drive.google.com/file/d/PREMIUM_HISTORY_LINK')">🔒 Unlock & Download PDF</div>
-            </div>
-
-            <div class="material-card">
-                <h4>🔥 English - Core Grammar, Letters & VVIP Compulsory Questions</h4>
-                <div class="card-meta">
-                    <span>Size: 14.2 MB (Badi File)</span>
-                    <span class="badge-premium">₹20 UNLOCK</span>
-                </div>
-                <div class="download-btn" onclick="openLock('https://drive.google.com/file/d/PREMIUM_ENGLISH_LINK')">🔒 Unlock & Download PDF</div>
-            </div>
+                <button type="submit" class="submit-redeem">Send Money To Wallet</button>
+            </form>
         </div>
     </div>
 
-    <!-- LOCK MODAL OVERLAY -->
-    <div class="modal-overlay" id="lockModal">
-        <div class="lock-box">
-            <span class="close-modal" onclick="closeLock()">&times;</span>
-            <h3 style="color: #ff2a74; font-size: 18px;">🔒 File Unlock Form</h3>
-            <p style="font-size: 12px; color: #cbd5e0; margin-top: 3px;">Niche diye QR Code ko scan karke ₹20 ka payment karein.</p>
+    <script>
+        var totalBalance = 0.00;
+        var secondsLeft = 60; 
+        var countdownTimer;
 
-            <div class="payment-box">
-                <a href="phonepe://pay?pa=861997526@ybl&pn=Nikhil%20Singh&am=20" class="phonepe-btn">
-                    <img src="https://img.icons8.com/color/48/phonepe.png" alt="PhonePe"> Pay ₹20 via PhonePe App
-                </a>
-                
-                <p style="font-size: 11px; color: #ff2a74; font-weight: 600; margin-bottom: 5px;">OR Scan QR Code to Pay:</p>
-                
-                <div class="qr-container">
-                    <img src="phonepe-qr.png" alt="Nikhil Singh PhonePe QR">
-                </div>
-                <p style="font-size: 10px; color: #a0aec0;">Name: Nikhil Singh</p>
-            </div>
+        function startVideoTask() {
+            document.getElementById('startTaskBtn').style.display = 'none';
+            document.getElementById('timerZone').style.display = 'block';
 
-            <form id="popupLoginForm">
-                <div class="input-group">
-                    <label>👤 STUDENT NAME / INSTA HANDLE</label>
-                    <input type="text" id="studentName" placeholder="Enter your name" required>
-                </div>
+            countdownTimer = setInterval(function() {
+                secondsLeft--;
+                document.getElementById('countdown').innerText = secondsLeft;
 
-                <div class="input-group">
-                    <label>🔑 ENTER 12-DIGIT PHONEPE UTR (REAL PAYMENT ONLY)</label>
-                    <input type="text" id="utrNumber" placeholder="Enter 12-Digit Transaction Number" maxlength="12" minlength="12" pattern="\d{12}" required>
-                </div>
+                if (secondsLeft <= 0) {
+                    clearInterval(countdownTimer);
+                    document.getElementById('timerZone').style.display = 'none';
+                    document.getElementById('claimBtn').style.display = 'block';
+                }
+            }, 1000);
+        }
 
-                <button type="submit" class="verify-btn">VERIFY PAYMENT & DOWNLOAD</button>
-            </form>
+        function claimMoney() {
+            totalBalance += 5.00; 
+            document.getElementById('balance').innerText = totalBalance.toFixed(2);
+            
+            document.getElementById('claimBtn').style.display = 'none';
+            document.getElementById('redeemZone').style.display = 'block';
+            
+            alert("🎉 Badhai ho! Aapke wallet mein ₹5.00 add kar diye gaye hain.");
+        }
 
-            <div class="loader-box" id="loaderBox">
-                <div class="spinner"></div>
-                <p style="color: #00cbc6; font-size: 12px; font-weight: 600;">Verifying UTR with PhonePe Server...</p>
-            </div>
-        </div>
-    </div
+        document.getElementById('redeemForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var phone = document.getElementById('userPhone').value;
+            
+            alert("✅ Withdrawal Request Sent! Aapke Number (" + phone + ") par ₹" + totalBalance + " agle 24 ghante mein bhej diye jayenge.");
+            
+            document.getElementById('redeemZone').style.display = 'none';
+            document.getElementById('startTaskBtn').style.display = 'block';
+            document.getElementById('startTaskBtn').innerText = "🔄 Watch Another Video";
+            totalBalance = 0.00;
+            document.getElementById('balance').innerText = "0.00";
+            secondsLeft = 60;
+            document.getElementById('redeemForm').reset();
+        });
+    </script>
+</body>
+</html>
