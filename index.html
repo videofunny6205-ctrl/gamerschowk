@@ -3,249 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GamerChowk - Watch & Earn</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Gamers Chowk - Watch & Earn</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
         body {
-            background-color: #080a10;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
             color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 15px;
-        }
-
-        .main-box {
-            background: #121622;
-            border: 2px solid #ffaa00;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(255, 170, 0, 0.2);
-            width: 100%;
-            max-width: 460px;
-            padding: 20px;
             text-align: center;
+            padding: 20px;
+            margin: 0;
         }
-
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(255, 68, 68, 0.3);
+        }
         h1 {
-            color: #ffaa00;
-            font-size: 24px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-            letter-spacing: 1px;
+            color: #ff4444;
+            font-size: 28px;
         }
-
-        .balance-card {
-            background: rgba(255, 170, 0, 0.1);
-            border: 1px solid #ffaa00;
-            padding: 10px;
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 700;
+        p {
             font-size: 16px;
-            margin-bottom: 20px;
-            color: #ffaa00;
+            color: #cccccc;
         }
-
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #2d3748;
-            margin-bottom: 15px;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .btn-zone {
-            margin-top: 15px;
-        }
-
-        .action-btn {
-            background: #ffaa00;
-            color: #080a10;
-            border: none;
-            width: 100%;
-            padding: 12px;
-            font-size: 15px;
-            font-weight: 700;
+        .btn {
+            display: inline-block;
+            background-color: #00c851;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
             border-radius: 8px;
-            cursor: pointer;
-            text-transform: uppercase;
+            margin-top: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 200, 81, 0.4);
             transition: 0.3s;
         }
-
-        .action-btn:disabled {
-            background: #2d3748;
-            color: #718096;
-            cursor: not-allowed;
-        }
-
-        .timer-text {
-            font-size: 14px;
-            color: #a0aec0;
-            margin-top: 10px;
-            font-weight: 600;
-        }
-
-        /* Redeem Form Styles */
-        .redeem-box {
-            display: none;
-            background: #1a202c;
-            border: 1px solid #4ade80;
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        .redeem-box h3 {
-            color: #4ade80;
-            font-size: 16px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .input-group {
-            margin-bottom: 12px;
-        }
-
-        .input-group label {
-            display: block;
-            font-size: 11px;
-            color: #a0aec0;
-            margin-bottom: 4px;
-        }
-
-        .input-group input {
-            width: 100%;
-            background: #080a10;
-            border: 1px solid #2d3748;
-            border-radius: 6px;
-            padding: 10px;
-            color: #fff;
-            font-size: 13px;
-            outline: none;
-        }
-
-        .submit-redeem {
-            background: #4ade80;
-            color: #080a10;
-            border: none;
-            width: 100%;
-            padding: 10px;
-            font-weight: 700;
-            border-radius: 6px;
-            cursor: pointer;
-            text-transform: uppercase;
+        .btn:hover {
+            background-color: #007e33;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
 
-    <div class="main-box">
-        <h1>📺 WATCH & EARN</h1>
-        <p style="font-size: 12px; color: #a0aec0; margin-bottom: 5px;">Video ko poora dekhein aur Paytm Cash kamayein!</p>
+    <div class="container">
+        <h1>🎮 Gamers Chowk 🎮</h1>
+        <p>Gamer Bhaiyon! Video dekho, tasveerein download karo aur points kamao.</p>
+        <p>Neeche diye gaye button par click karke shuru karein:</p>
         
-        <!-- 👉 DIRECT CHANNEL SUBSCRIBE LINK -->
-        <a href="https://youtube.com/@indian3d_869" target="_blank" style="color: #ffaa00; text-decoration: none; font-weight: bold; display: block; margin-bottom: 15px; font-size: 14px;">👉 Click Here to Subscribe @indian3d_869</a>
-
-        <!-- WALLET BALANCE -->
-        <div class="balance-card">
-            💰 Wallet Balance: ₹<span id="balance">0.00</span>
-        </div>
-
-        <!-- YOUTUBE VIDEO BOX -->
-        <div class="video-container">
-            <!-- ✅ AAPKI VIDEO ID FIT KAR DI HAI -->
-            <iframe id="ytVideo" src="https://www.youtube.com/embed/qyPdGLTG7ZA?enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-
-        <!-- TIMER & TASK BUTTON -->
-        <div class="btn-zone">
-            <button class="action-btn" id="startTaskBtn" onclick="startVideoTask()">▶️ Start Task & Watch Video</button>
-            <div class="timer-text" id="timerZone" style="display: none;">
-                ⏳ Video dekh rahe ho... Kripya <span id="countdown" style="color: #ffaa00;">60</span> seconds tak wait karein!
-            </div>
-            <button class="action-btn" id="claimBtn" style="display: none; background: #4ade80;" onclick="claimMoney()">🎁 Claim Rewards (₹5)</button>
-        </div>
-
-        <!-- REDEEM WALLET BOX -->
-        <div class="redeem-box" id="redeemZone">
-            <h3>💸 Instant Withdrawal Form</h3>
-            <form id="redeemForm">
-                <div class="input-group">
-                    <label>📱 ENTER PAYTM / PHONEPE NUMBER</label>
-                    <input type="text" id="userPhone" placeholder="Enter 10-Digit Mobile Number" pattern="\d{10}" maxlength="10" required>
-                </div>
-                <button type="submit" class="submit-redeem">Send Money To Wallet</button>
-            </form>
-        </div>
+        <!-- Aapka Adsterra Smartlink Button -->
+        <a href="https://publishers.adsterra.com/preview/29728874" class="btn" target="_blank">👉 WATCH & EARN NOW 👈</a>
     </div>
 
-    <script>
-        var totalBalance = 0.00;
-        var secondsLeft = 60; 
-        var countdownTimer;
-
-        function startVideoTask() {
-            document.getElementById('startTaskBtn').style.display = 'none';
-            document.getElementById('timerZone').style.display = 'block';
-
-            countdownTimer = setInterval(function() {
-                secondsLeft--;
-                document.getElementById('countdown').innerText = secondsLeft;
-
-                if (secondsLeft <= 0) {
-                    clearInterval(countdownTimer);
-                    document.getElementById('timerZone').style.display = 'none';
-                    document.getElementById('claimBtn').style.display = 'block';
-                }
-            }, 1000);
-        }
-
-        function claimMoney() {
-            totalBalance += 5.00; 
-            document.getElementById('balance').innerText = totalBalance.toFixed(2);
-            
-            document.getElementById('claimBtn').style.display = 'none';
-            document.getElementById('redeemZone').style.display = 'block';
-            
-            alert("🎉 Badhai ho! Aapke wallet mein ₹5.00 add kar diye gaye hain.");
-        }
-
-        document.getElementById('redeemForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var phone = document.getElementById('userPhone').value;
-            
-            alert("✅ Withdrawal Request Sent! Aapke Number (" + phone + ") par ₹" + totalBalance + " agle 24 ghante mein bhej diye jayenge.");
-            
-            document.getElementById('redeemZone').style.display = 'none';
-            document.getElementById('startTaskBtn').style.display = 'block';
-            document.getElementById('startTaskBtn').innerText = "🔄 Watch Another Video";
-            totalBalance = 0.00;
-            document.getElementById('balance').innerText = "0.00";
-            secondsLeft = 60;
-            document.getElementById('redeemForm').reset();
-        });
-    </script>
 </body>
 </html>
