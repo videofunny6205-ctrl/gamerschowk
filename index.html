@@ -1,232 +1,112 @@
-onsubmit="validateAndSubmit(event)">
-                <div class="form-group">
-                    <label>Choose Offline Game</label>
-                    <select class="form-control" id="game_select">
-                        <option>Ludo King (Entry: ₹10)</option>
-                        <option>Subway Surfers Challenge (Entry: ₹10)</option>
-                        <option>Carrom Pool (Entry: ₹10)</option>
-                        <option>Candy Crush Race (Entry: ₹10)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Your Name</label>
-                    <input type="text" class="form-control" id="p_name" placeholder="Enter Full Name" required>
-                </div>
-                <div class="form-group">
-                    <label>WhatsApp Number</label>
-                    <input type="tel" class="form-control" id="wp_num" placeholder="For Match Updates" required>
-                </div>
-                <div class="form-group">
-                    <label>In-Game Name / ID</label>
-                    <input type="text" class="form-control" id="game_id" placeholder="e.g. Ludo Username" required>
-                </div>
-                <div class="form-group">
-                    <label style="color: var(--green-neon); font-weight: bold;">🔑 Enter 12-Digit PhonePe Transaction ID (UTR)</label>
-                    <input type="text" class="form-control" id="utr_id" placeholder="e.g. 364712984532" maxlength="12" minlength="12" required style="border: 1px solid var(--green-neon);">
-                </div>
-                <button type="submit" class="submit-btn">Verify & Submit Entry</button>
-            </form>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>&copy; 2026 GamersChowk. Secure Gaming System.</p>
-    </footer>
-
-</body><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GamersChowk - All-in-One Arena</title>
+    <title>GamersChowk - Instagram Rewards</title>
     <style>
         :root {
             --bg-color: #0a0a12;
             --card-bg: #121225;
+            --insta-color: #e1306c;
             --cyan-neon: #00f2fe;
-            --red-neon: #ff2a5f;
-            --green-neon: #39ff14;
             --text-color: #ffffff;
             --text-muted: #8a8ab0;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-color); padding-bottom: 50px; }
+        body { background-color: var(--bg-color); color: var(--text-color); padding: 20px; padding-bottom: 50px; }
 
-        /* Navbar */
-        nav {
-            display: flex; justify-content: space-between; align-items: center; padding: 20px 5%;
-            background: rgba(18, 18, 37, 0.8); backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 242, 254, 0.2); position: sticky; top: 0; z-index: 100;
-        }
-        .logo { font-size: 24px; font-weight: bold; color: var(--cyan-neon); text-transform: uppercase; letter-spacing: 2px; }
+        .container { max-width: 550px; margin: 30px auto; }
+        .card { background-color: var(--card-bg); border-radius: 8px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid rgba(225, 48, 108, 0.3); }
+        
+        h2 { font-size: 22px; margin-bottom: 15px; text-transform: uppercase; color: var(--insta-color); text-align: center; }
+        .subtitle { text-align: center; color: var(--text-muted); font-size: 14px; margin-bottom: 20px; }
 
-        /* Container */
-        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr; gap: 30px; }
-        @media (min-width: 768px) { .container { grid-template-columns: 1fr 1fr; } .full-width { grid-column: span 2; } }
-
-        .card { background-color: var(--card-bg); border-radius: 8px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .card-cyan { border: 1px solid rgba(0, 242, 254, 0.3); }
-        .card-red { border: 1px solid rgba(255, 42, 95, 0.3); }
-        .card-green { border: 1px solid rgba(57, 255, 20, 0.3); }
-
-        h2 { font-size: 22px; margin-bottom: 20px; text-transform: uppercase; }
-        .card-cyan h2 { color: var(--cyan-neon); }
-        .card-red h2 { color: var(--red-neon); }
-        .card-green h2 { color: var(--green-neon); }
-
-        /* Video Feed Grid */
-        .video-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
-        @media (min-width: 600px) { .video-grid { grid-template-columns: 1fr 1fr; } }
-        .video-card { background: rgba(10, 10, 18, 0.5); border-radius: 6px; overflow: hidden; cursor: pointer; border: 1px solid rgba(255,255,255,0.05); }
-        .thumbnail-box { position: relative; padding-bottom: 56.25%; background: #000; }
-        .thumbnail-box img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
-        .card-info { padding: 10px; font-size: 13px; font-weight: bold; }
-
-        /* Payment Lock Box */
+        /* Payment Box */
         .payment-box {
-            background: rgba(255, 42, 95, 0.1); border: 2px dashed var(--red-neon);
+            background: rgba(225, 48, 108, 0.1); border: 2px dashed var(--insta-color);
             border-radius: 6px; padding: 15px; margin-bottom: 20px; text-align: center;
         }
-        .payment-box h4 { color: var(--red-neon); text-transform: uppercase; margin-bottom: 5px; }
+        .payment-box h4 { color: var(--insta-color); text-transform: uppercase; margin-bottom: 5px; font-weight: bold; }
         .payment-box span { display: inline-block; background: #fff; color: #000; padding: 4px 10px; font-weight: bold; border-radius: 4px; margin: 5px 0; }
+        .info-tags { font-size: 12px; color: #ffb1c9; margin-top: 8px; text-align: left; line-height: 1.5; }
 
         /* Forms */
         .form-group { margin-bottom: 15px; }
         .form-group label { display: block; font-size: 12px; margin-bottom: 6px; text-transform: uppercase; color: var(--text-muted); }
         .form-control { width: 100%; padding: 12px; background-color: rgba(10, 10, 18, 0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 5px; color: #fff; }
-        .submit-btn { width: 100%; padding: 14px; font-weight: bold; text-transform: uppercase; border: none; border-radius: 5px; cursor: pointer; background-color: var(--red-neon); color: #fff; }
-
-        /* Apps */
-        .apps-list { display: grid; grid-template-columns: 1fr; gap: 15px; }
-        .app-item { background: rgba(10, 10, 18, 0.5); padding: 15px; border-radius: 6px; }
-        .download-btn { display: inline-block; background: var(--green-neon); color: #000; padding: 8px 15px; text-decoration: none; font-weight: bold; border-radius: 4px; font-size: 12px; margin-top: 10px; text-transform: uppercase; }
+        .submit-btn { width: 100%; padding: 14px; font-weight: bold; text-transform: uppercase; border: none; border-radius: 5px; cursor: pointer; background-color: var(--insta-color); color: #fff; box-shadow: 0 0 10px rgba(225, 48, 108, 0.4); }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">GamersChowk Master</div>
-    </nav>
-
     <div class="container">
-        
-        <!-- 1. AUTOMATIC YOUTUBE VIDEOS SECTION -->
-        <div class="card card-cyan full-width">
-            <h2>🎥 YouTube Latest Videos</h2>
-            <div id="loader" style="color: var(--text-muted);">Videos automatic load ho rahi hain...</div>
-            <div class="video-grid" id="videoGrid"></div>
-        </div>
-
-        <!-- 2. INDIAN BIKES DRIVING 3D PRIME TEAM LOCK REGISTRATION -->
-        <div class="card card-red" id="prime-game">
-            <h2>🏍️ Indian Bikes Driving 3D (Prime Team Match)</h2>
+        <div class="card">
+            <h2>📸 Instagram Story Posting Rewards</h2>
+            <p class="subtitle">Humari post apni Insta Story par lagao aur rozana ₹50 se ₹100 tak ka reward pao!</p>
             
+            <!-- Strict Payment Lock Box -->
             <div class="payment-box">
-                <h4>🔒 ENTRY LOCK: ₹20 REGISTRATION CHARGE</h4>
-                <p>Team ke sath khelne ke liye pehle <b>₹20 Entry Fee</b> PhonePe karein:</p>
+                <h4>🔒 REGISTRATION LOCK: ₹20 ENTRY FEE</h4>
+                <p>Story Reward Job active karne ke liye pehle <b>₹20</b> PhonePe karein:</p>
                 <span>📞 PhonePe: 8619979526</span>
-                <p style="font-size: 11px; color: #ffbcbc; margin-top: 5px;">Bina ₹20 dale transaction ID nahi milegi. Galat ID dalne par registration automatic block ho jayega!</p>
+                <div class="info-tags">
+                    • 12-digit ka sahi Transaction/UTR ID daalna zaroori hai.<br>
+                    • Bina ₹20 payment kiye login ya register nahi hoga.<br>
+                    • Galat ID daalne par account block ho jayega.
+                </div>
             </div>
 
             <script>
-                function verifyPrimeRegistration(event) {
+                function verifyInstaRegistration(event) {
                     event.preventDefault();
-                    var utr = document.getElementById("txn_id").value.trim();
+                    var utr = document.getElementById("insta_utr").value.trim();
                     
                     // Strict 12-Digit PhonePe Transaction/UTR ID Validation
                     if(utr.length < 12 || isNaN(utr)) {
-                        alert("❌ Access Denied! Kripya PhonePe par ₹20 bhejkar sahi 12-digit ka UTR number dalein, varna aap login/register nahi kar sakte.");
+                        alert("❌ Access Denied! Kripya PhonePe par ₹20 bhejkar apna sahi 12-digit ka UTR number dalein. Bina payment ke login nahi kiya ja sakta.");
                         return false;
                     }
 
-                    var name = document.getElementById("leader_name").value;
-                    var whatsapp = document.getElementById("wp_num").value;
-                    var teammates = document.getElementById("team_members").value;
+                    var name = document.getElementById("insta_name").value;
+                    var username = document.getElementById("insta_user").value;
+                    var whatsapp = document.getElementById("insta_wp").value;
 
-                    var msg = "🛡️ *INDIAN BIKES DRIVING 3D - PRIME ENTRY* 🛡️\n\n" +
-                              "👤 *Leader Name:* " + name + "\n" +
-                              "📞 *WhatsApp:* " + whatsapp + "\n" +
-                              "👥 *Team Members Details:* " + teammates + "\n" +
-                              "💰 *Paid Entry Fee:* ₹20 Successful\n" +
+                    var msg = "📸 *INSTAGRAM STORY REWARD REGISTRATION* 📸\n\n" +
+                              "👤 *Name:* " + name + "\n" +
+                              "🔗 *Instagram Username:* @" + username + "\n" +
+                              "📞 *WhatsApp Number:* " + whatsapp + "\n" +
+                              "💰 *Paid Registration Fee:* ₹20 Successful\n" +
                               "🔢 *PhonePe UTR/Txn ID:* " + utr + "\n\n" +
-                              "✅ _Admin, meri details check karke mujhe prime team match ka room code send kijiye._";
+                              "✅ _Admin, meri payment aur account check karke mujhe daily story task and rewards group mein add kijiye._";
 
                     window.location.href = "https://wa.me/918619979526?text=" + encodeURIComponent(msg);
                 }
             </script>
 
-            <form onsubmit="verifyPrimeRegistration(event)">
+            <!-- Form -->
+            <form onsubmit="verifyInstaRegistration(event)">
                 <div class="form-group">
-                    <label>Your Name (Leader)</label>
-                    <input type="text" class="form-control" id="leader_name" placeholder="Enter Full Name" required>
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" id="insta_name" placeholder="Enter Your Name" required>
                 </div>
                 <div class="form-group">
-                    <label>WhatsApp Number</label>
-                    <input type="tel" class="form-control" id="wp_num" placeholder="For Prime Match Code" required>
+                    <label>Instagram Username</label>
+                    <input type="text" class="form-control" id="insta_user" placeholder="e.g. gamer_nikhil" required>
                 </div>
                 <div class="form-group">
-                    <label>Teammates Names & In-Game IDs</label>
-                    <textarea class="form-control" id="team_members" rows="3" placeholder="e.g. Player2 (ID), Player3 (ID)" required style="resize: none;"></textarea>
+                    <label>WhatsApp Number (For Payment Rewards)</label>
+                    <input type="tel" class="form-control" id="insta_wp" placeholder="Enter WhatsApp Number" required>
                 </div>
                 <div class="form-group">
-                    <label style="color: var(--red-neon); font-weight: bold;">🔑 Enter 12-Digit PhonePe UTR (Paisa Daalne Ke Baad)</label>
-                    <input type="text" class="form-control" id="txn_id" placeholder="e.g. 364712984532" maxlength="12" minlength="12" required style="border: 1px solid var(--red-neon);">
+                    <label style="color: var(--insta-color); font-weight: bold;">🔑 Enter 12-Digit PhonePe UTR (Paisa Daalne Ke Baad)</label>
+                    <input type="text" class="form-control" id="insta_utr" placeholder="e.g. 364712984532" maxlength="12" minlength="12" required style="border: 1px solid var(--insta-color);">
                 </div>
-                <button type="submit" class="submit-btn">Verify ₹20 & Join Team</button>
+                <button type="submit" class="submit-btn">Verify ₹20 & Start Earning</button>
             </form>
         </div>
-
-        <!-- 3. DATA SELLING APPS SECTION -->
-        <div class="card card-green" id="earn-money">
-            <h2>💰 Passive Earning Area</h2>
-            <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 15px;">Apna net data share karke free cash kamao:</p>
-            <div class="apps-list">
-                <div class="app-item">
-                    <h4>1. Honeygain</h4>
-                    <p style="font-size: 12px; color: var(--text-muted);">Internet bechkar free bonus pao.</p>
-                    <a href="#" target="_blank" class="download-btn">Get ₹400 Free</a>
-                </div>
-                <div class="app-item">
-                    <h4>2. Pawns.app</h4>
-                    <p style="font-size: 12px; color: var(--text-muted);">Surveys aur data share karke kamao.</p>
-                    <a href="#" target="_blank" class="download-btn">Download Now</a>
-                </div>
-            </div>
-        </div>
-
     </div>
 
-    <!-- YouTube Auto Fetch Script -->
-    <script>
-        // ⚠️ APNI YOUTUBE CHANNEL ID YAHA DALO
-        const CHANNEL_ID = "UC_CHANGE_THIS_WITH_YOUR_CHANNEL_ID"; 
-        const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
-        const apiFetchUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-
-        fetch(apiFetchUrl)
-            .then(response => response.json())
-            .then(data => {
-                const loader = document.getElementById('loader');
-                const grid = document.getElementById('videoGrid');
-                if (data.status === 'ok' && data.items.length > 0) {
-                    loader.style.display = 'none';
-                    data.items.slice(0, 4).forEach(item => {
-                        const videoId = item.link.split('v=')[1];
-                        const card = document.createElement('div');
-                        card.className = 'video-card';
-                        card.innerHTML = `
-                            <div class="thumbnail-box"><img src="https://img.youtube.com/vi/${videoId}/mqdefault.jpg"></div>
-                            <div class="card-info">${item.title}</div>
-                        `;
-                        card.onclick = () => window.open(item.link, '_blank');
-                        grid.appendChild(card);
-                    });
-                } else { loader.innerText = "Apni YouTube Channel ID code me sahi se set karein!"; }
-            }).catch(() => { document.getElementById('loader').innerText = "Server busy, cannot load videos."; });
-    </script>
 </body>
-</html>
-
 </html>
