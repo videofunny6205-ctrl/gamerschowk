@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamersChowk - Instagram Rewards</title>
+    <style>
+        :root {
+            --bg-color: #0a0a12;
+            --card-bg: #121225;
+            --insta-color: #e1306c;
+            --cyan-neon: #00f2fe;
+            --green-neon: #39ff14;
+            --text-color: #ffffff;
+            --text-muted: #8a8ab0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); padding: 20px; }
+
+        .container { max-width: 550px; margin: 40px auto; }
+        .card { background-color: var(--card-bg); border-radius: 8px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid rgba(225, 48, 108, 0.3); }
+        
+        h2 { font-size: 22px; margin-bottom: 15px; text-transform: uppercase; color: var(--insta-color); text-align: center; }
+        .subtitle { text-align: center; color: var(--text-muted); font-size: 14px; margin-bottom: 20px; }
+
+        .payment-box {
+            background: rgba(225, 48, 108, 0.1); border: 2px dashed var(--insta-color);
+            border-radius: 6px; padding: 15px; margin-bottom: 20px; text-align: center;
+        }
+        .payment-box h4 { color: var(--insta-color); text-transform: uppercase; margin-bottom: 5px; font-weight: bold; }
+        .payment-box span { display: inline-block; background: #fff; color: #000; padding: 4px 10px; font-weight: bold; border-radius: 4px; margin: 5px 0; }
+
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 12px; margin-bottom: 6px; text-transform: uppercase; color: var(--text-muted); }
+        .form-control { width: 100%; padding: 12px; background-color: rgba(10, 10, 18, 0.8); border: 1px solid rgba(255,255,255,0.1); border-radius: 5px; color: #fff; }
+        .submit-btn { width: 100%; padding: 14px; font-weight: bold; text-transform: uppercase; border: none; border-radius: 5px; cursor: pointer; background-color: var(--insta-color); color: #fff; font-size: 14px; }
+
+        #secret-dashboard { display: none; border-color: var(--green-neon); animation: fadeIn 0.5s ease; }
+        .success-banner { background: rgba(57, 255, 20, 0.1); border: 1px solid var(--green-neon); color: var(--green-neon); padding: 12px; text-align: center; border-radius: 5px; margin-bottom: 20px; font-weight: bold; }
+        
+        .download-box { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 6px; text-align: center; margin-bottom: 20px; border: 1px solid rgba(0, 242, 254, 0.2); }
+        .action-btn { display: block; width: 100%; padding: 14px; text-align: center; font-weight: bold; text-decoration: none; border-radius: 5px; margin-top: 10px; text-transform: uppercase; }
+        .btn-green { background-color: var(--green-neon); color: #000; font-size: 15px; box-shadow: 0 0 10px var(--green-neon); }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- SECTION 1: LOGIN FORM -->
+        <div class="card" id="login-card">
+            <h2>📸 Story Rewards Login</h2>
+            <p class="subtitle">Rozana Instagram Story lagakar ₹50 se ₹100 tak kamayein!</p>
+            
+            <div class="payment-box">
+                <h4>🔒 ACCOUNT UNLOCK CHARGE: ₹20</h4>
+                <p>Website login karne ke liye pehle <b>₹20</b> PhonePe karein:</p>
+                <span>📞 PhonePe: 8619979526</span>
+                <p style="font-size: 11px; color: #ffb1c9; margin-top: 6px;">Bina payment ke dashboard nahi khulega. Galat UTR dalne par verification fail ho jayegi.</p>
+            </div>
+
+            <form onsubmit="unlockDashboard(event)">
+                <div class="form-group">
+                    <label>Instagram Username</label>
+                    <input type="text" class="form-control" id="insta_user" placeholder="e.g. gamer_nikhil" required>
+                </div>
+                <div class="form-group">
+                    <label style="color: var(--insta-color); font-weight: bold;">🔑 Enter 12-Digit PhonePe UTR (Paisa Daalne Ke Baad)</label>
+                    <input type="text" class="form-control" id="txn_id" placeholder="Enter 12-Digit Transaction Number" maxlength="12" minlength="12" required style="border: 1px solid var(--insta-color);">
+                </div>
+                <button type="submit" class="submit-btn">Verify Payment & Login</button>
+            </form>
+        </div>
+
+        <!-- SECTION 2: SECRET DASHBOARD -->
+        <div class="card" id="secret-dashboard">
+            <div class="success-banner">✅ ACCESS GRANTED (🔒 ACCOUNT UNLOCKED)</div>
+            
+            <h3 style="color: var(--green-neon); margin-bottom: 10px; text-align: center;">Welcome Member!</h3>
+            <p style="font-size: 14px; text-align: center; color: var(--text-muted); margin-bottom: 25px;">Aapka ₹20 ka registration successful ho gaya hai.</p>
+
+            <div class="download-box">
+                <h4 style="color: var(--cyan-neon); margin-bottom: 5px;">🎯 GET YOUR DAILY TASK NOW</h4>
+                <p style="font-size: 13px; color: var(--text-muted); padding: 10px 0;">Neeche diye gaye button par click karke seedha admin ke personal WhatsApp par message karein aur apna aaj ka task image aur promo link receive karein.</p>
+                
+                <a href="#" id="whatsapp-link" target="_blank" class="action-btn btn-green">🟢 Get Daily Task on WhatsApp</a>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function unlockDashboard(event) {
+            event.preventDefault();
+            var utr = document.getElementById("txn_id").value.trim();
+            var username = document.getElementById("insta_user").value.trim();
+            
+            if(utr.length !== 12 || isNaN(utr)) {
+                alert("❌ Access Denied! Galat UTR code hai. Kripya PhonePe par ₹20 bhejkar sahi 12-digit ka Transaction number dalein tabhi website unlock होगी।");
+                return false;
+            }
+
+            var adminNumber = "918619979526";
+            var textMessage = `👋 Hello Nikhil Bhai!\n\nMene website par ₹20 pay karke login kar liya hai.\n\n👤 My Insta Username: @${username}\n🔢 My PhonePe UTR: ${utr}\n\n👉 Kripya meri details check karke mujhe aaj ki Story Image aur Promo Link send kijiye takki me kam shuru kar saku!`;
+            
+            document.getElementById("whatsapp-link").href = "https://wa.me/" + adminNumber + "?text=" + encodeURIComponent(textMessage);
+
+            document.getElementById("login-card").style.display = "none";
+            document.getElementById("secret-dashboard").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
