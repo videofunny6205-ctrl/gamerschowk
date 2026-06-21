@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+html>
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
@@ -380,44 +380,4 @@
                 <p style="color: #00cbc6; font-size: 12px; font-weight: 600;">Verifying UTR with PhonePe Server...</p>
             </div>
         </div>
-    </div>
-
-    <script>
-        var currentTargetLink = "";
-
-        function openLock(fileLink) {
-            currentTargetLink = fileLink;
-            document.getElementById('lockModal').style.display = 'flex';
-        }
-
-        function closeLock() {
-            document.getElementById('lockModal').style.display = 'none';
-            document.getElementById('popupLoginForm').style.display = 'block';
-            document.getElementById('loaderBox').style.display = 'none';
-        }
-
-        document.getElementById('popupLoginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var utr = document.getElementById('utrNumber').value;
-            
-            if(utr.length !== 12 || isNaN(utr)) {
-                alert("Kripya sahi 12-digit ka UTR number daalein!");
-                return;
-            }
-
-            document.getElementById('popupLoginForm').style.display = 'none';
-            document.getElementById('loaderBox').style.display = 'block';
-
-            setTimeout(function() {
-                alert("🎉 PAYMENT SUCCESSFUL! Aapki file ab download ho rahi hai.");
-                document.getElementById('lockModal').style.display = 'none';
-                window.open(currentTargetLink, '_blank');
-                document.getElementById('popupLoginForm').style.display = 'block';
-                document.getElementById('loaderBox').style.display = 'none';
-                document.getElementById('popupLoginForm').reset();
-            }, 5000);
-        });
-    </script>
-
-</body>
-</html>
+    </div
