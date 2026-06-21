@@ -2,29 +2,52 @@
 <html lang="hi">
 <head>
     <meta charset="UTF-8">
-    <title>Gamers Chowk - Watch & Earn</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #121212; color: #ffffff; text-align: center; padding: 20px; margin: 0; }
-        .container { max-width: 450px; margin: 20px auto; background: #1a1a1a; padding: 20px; border-radius: 15px; box-shadow: 0px 4px 15px rgba(255, 68, 68, 0.3); }
-        h1 { color: #ff4444; font-size: 24px; margin-bottom: 15px; }
-        p { font-size: 15px; color: #cccccc; }
-        .video-container { position: relative; width: 100%; max-width: 315px; margin: 20px auto; border-radius: 10px; overflow: hidden; border: 2px solid #ff4444; }
-        .btn { display: block; background-color: #00c851; color: white; padding: 15px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 8px; margin-top: 15px; box-shadow: 0px 4px 10px rgba(0, 200, 81, 0.4); transition: 0.3s; }
-        .btn:hover { background-color: #007e33; transform: scale(1.02); }
+        body { background-color: #121212; color: #ffffff; text-align: center; font-family: Arial; }
+        .container { max-width: 450px; margin: 20px auto; padding: 20px; background: #1a1a1a; border-radius: 15px; }
+        #play-btn { background-color: #00c851; color: white; padding: 15px 30px; font-size: 20px; border: none; border-radius: 8px; cursor: pointer; margin-bottom: 20px; font-weight: bold; }
+        #timer { font-size: 22px; color: #ffeb3b; margin: 10px 0; display: none; }
+        #withdraw-btn { display: none; background-color: #ff4444; color: white; padding: 15px 30px; font-size: 20px; text-decoration: none; border-radius: 8px; font-weight: bold; }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <h1>Gamers Chowk 🎮</h1>
-    <p>Bhaiyon, pehle ye mast Short video dekho aur phir neeche button par click karke points claim karo!</p>
-
-    <div class="video-container">
-        <iframe width="315" height="560" src="https://www.youtube.com/embed/PSMebLd49j8" frameborder="0" allowfullscreen></iframe>
+    <div class="container">
+        <h1>Gamers Chowk 🎮</h1>
+        <p>Points claim karne ke liye niche button dabayein!</p>
+        
+        <iframe width="315" height="200" src="https://www.youtube.com/embed/PSMebLd49j8" frameborder="0" allowfullscreen></iframe>
+        
+        <br><br>
+        <!-- Play Button -->
+        <button id="play-btn" onclick="startProcess()">▶ PLAY & START TIMER</button>
+        
+        <!-- Timer -->
+        <div id="timer">Time left: 29 seconds</div>
+        
+        <!-- Withdraw Button (Ad Link) -->
+        <a id="withdraw-btn" href="https://www.effectivecpmnetwork.com/cdzdhuyf?key=36d64ef1accafe3bf35a94fe779f5507" target="_blank">💰 CLICK TO WITHDRAW 💰</a>
     </div>
 
-    <a href="https://www.effectivecpmnetwork.com/cdzdhuyf?key=36d64ef1accafe3bf35a94fe779f5507" class="btn" target="_blank">👉 CLAIM POINTS / DOWNLOAD NOW 👈</a>
-</div>
-
+    <script>
+        function startProcess() {
+            document.getElementById("play-btn").style.display = "none";
+            document.getElementById("timer").style.display = "block";
+            
+            var seconds = 29;
+            var timerElement = document.getElementById("timer");
+            var withdrawBtn = document.getElementById("withdraw-btn");
+            
+            var countdown = setInterval(function() {
+                seconds--;
+                timerElement.textContent = "Time left: " + seconds + " seconds";
+                
+                if (seconds <= 0) {
+                    clearInterval(countdown);
+                    timerElement.textContent = "✅ Time khatam! Ab Withdraw karo.";
+                    withdrawBtn.style.display = "inline-block";
+                }
+            }, 1000);
+        }
+    </script>
 </body>
-</html
+</html>
