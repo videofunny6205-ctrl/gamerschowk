@@ -1,4 +1,5 @@
-html lang="hi">
+<!DOCTYPE html>
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,37 +14,47 @@ html lang="hi">
             margin: 0;
         }
         .container {
-            max-width: 500px;
-            margin: 50px auto;
+            max-width: 450px;
+            margin: 20px auto;
             background: #1e1e1e;
-            padding: 30px;
+            padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 4px 15px rgba(255, 68, 68, 0.3);
         }
         h1 {
             color: #ff4444;
-            font-size: 28px;
+            font-size: 24px;
+            margin-bottom: 15px;
         }
         p {
-            font-size: 16px;
+            font-size: 15px;
             color: #cccccc;
         }
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 315px;
+            margin: 20px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #ff4444;
+        }
         .btn {
-            display: inline-block;
+            display: block;
             background-color: #00c851;
             color: white;
-            padding: 15px 30px;
+            padding: 15px;
             font-size: 18px;
             font-weight: bold;
             text-decoration: none;
             border-radius: 8px;
-            margin-top: 20px;
+            margin-top: 15px;
             box-shadow: 0px 4px 10px rgba(0, 200, 81, 0.4);
             transition: 0.3s;
         }
         .btn:hover {
             background-color: #007e33;
-            transform: scale(1.05);
+            transform: scale(1.02);
         }
     </style>
 </head>
@@ -51,8 +62,16 @@ html lang="hi">
 
     <div class="container">
         <h1>🎮 Gamers Chowk 🎮</h1>
-        <p>Gamer Bhaiyon! Video dekho, tasveerein download karo aur points kamao.</p>
-        <p>Neeche diye gaye button par click karke shuru karein:</p>
+        <p>Bhaiyon, pehle ye mast Short video dekho aur phir neeche button par click karke points claim karo!</p>
         
-        <!-- Aapka Adsterra Smartlink Button -->
-        <a href="https
+        <!-- Aapki YouTube Short Video Player -->
+        <div class="video-container">
+            <iframe width="315" height="560" src="https://www.youtube.com/embed/PSMebLd49j8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        
+        <!-- Adsterra Smartlink Button -->
+        <a href="https://publishers.adsterra.com/preview/29728874" class="btn" target="_blank">👉 CLAIM POINTS / DOWNLOAD NOW 👈</a>
+    </div>
+
+</body>
+</html>
